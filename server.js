@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+//heroku setup
+const port = process.env.PORT || 3000;
 var app = express();
 
 //Partials are reusable... Partials
@@ -78,6 +80,6 @@ app.get('/bad', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(port, () => {
+  console.log(`Server is runnin on port ${port}`);
 });
